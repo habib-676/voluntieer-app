@@ -22,7 +22,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen ">
       {/* Particles background */}
       {init && (
         <Particles
@@ -34,8 +34,10 @@ const MainLayout = () => {
       )}
 
       {/* Page Content */}
-      <div className="max-w-11/12 mx-auto work-sans relative z-10">
-        <Navbar />
+      <div className="max-w-11/12 mx-auto work-sans  z-10 relative">
+        <div className="sticky top-0 z-50 backdrop-blur shadow transition-all">
+          <Navbar />
+        </div>
         <div className="min-h-[80vh]">
           <Outlet />
         </div>
