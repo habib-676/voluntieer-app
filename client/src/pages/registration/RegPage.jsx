@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const RegPage = () => {
   const {
@@ -9,10 +10,21 @@ const RegPage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    reset(); //  Clear the form after submit
-    toast.success("Thanks for registering! We'll be in touch soon.");
+  const onSubmit = async (formData) => {
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/applications`,
+        formData
+      );
+      console.log(data);
+      if (data.insertedId) {
+        toast.success("Thanks for registering! We'll be in touch soon.");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      reset();
+    }
   };
 
   return (
