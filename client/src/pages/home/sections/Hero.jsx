@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 py-12 px-6">
       {/* Left Section: Text Content */}
       <div className="lg:w-1/2 text-center lg:text-left space-y-6">
-        <h3 className="text-2xl md:text-4xl font-bold text-base-content">
+        <h3 className="text-2xl md:text-4xl font-bold ">
           <span className="text-primary">Unlocking</span> Education for{" "}
           <span className="text-primary"> Every Child</span>
         </h3>
