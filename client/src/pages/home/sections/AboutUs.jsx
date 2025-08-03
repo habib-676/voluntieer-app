@@ -1,4 +1,6 @@
-import React from "react";
+import { FaHospital, FaLeaf } from "react-icons/fa6";
+import { IoSchool } from "react-icons/io5";
+import { FaHandsHelping } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
@@ -29,19 +31,27 @@ const AboutUs = () => {
         {/* Pillars / Focus Areas */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-center mb-12">
           <div className="flex flex-col items-center">
-            <div className="text-3xl mb-2">🎓</div>
+            <div className="text-3xl mb-2 text-yellow-600">
+              <IoSchool />
+            </div>
             <p className="text-sm font-medium ">Education</p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-3xl mb-2">🏥</div>
+            <div className="text-3xl mb-2 text-red-500">
+              <FaHospital />
+            </div>
             <p className="text-sm font-medium ">Healthcare</p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-3xl mb-2">🌿</div>
+            <div className="text-3xl mb-2 text-green-600">
+              <FaLeaf />
+            </div>
             <p className="text-sm font-medium ">Sustainability</p>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-3xl mb-2">🤝</div>
+            <div className="text-3xl mb-2 text-blue-600">
+              <FaHandsHelping />
+            </div>
             <p className="text-sm font-medium ">Community</p>
           </div>
         </div>
