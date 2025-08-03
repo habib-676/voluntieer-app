@@ -34,7 +34,16 @@ async function run() {
         const result = await applicationsCollection.insertOne(application);
         res.send(result);
       } catch (err) {
-        console.log(err);
+        res.status(404).send({ message: err.message });
+      }
+    });
+
+    app.get("/applications", async (req, res) => {
+      try {
+        const result = await applicationsCollection.find().toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(404).send({ message: error.message });
       }
     });
 
