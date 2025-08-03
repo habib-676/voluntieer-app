@@ -24,7 +24,7 @@ A modern web application built for NGOs and educational organizations to manage 
 - 📤 Data submission to **MongoDB** via **Express.js**
 - 📃 Admin-friendly **applicants table**
 - 🔄 Asynchronous fetching
-- 🎨 Clean and responsive **UI with Tailwind CSS + DaisyUI**
+- 🎨 Clean and responsive **UI with Tailwind CSS + DaisyUI and tsParticles**
 - 🌐 Deployed on **Vercel** / **Firebase Hosting**
 
 ---
