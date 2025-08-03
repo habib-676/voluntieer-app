@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { getApplicants } from "../../utils/getApplicants";
 import { useState } from "react";
 import TableRow from "./TableRow";
+import { Helmet } from "react-helmet-async";
 
 const Applicants = () => {
   const [applicants, setApplicants] = useState([]);
@@ -26,6 +27,9 @@ const Applicants = () => {
   console.log(applicants);
   return (
     <div>
+      <Helmet>
+        <title>Application List</title>
+      </Helmet>
       <h2 className="text-3xl font-bold mb-6 text-center text-secondary my-10">
         All Applicants
       </h2>

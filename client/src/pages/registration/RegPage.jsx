@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const RegPage = () => {
   const {
@@ -29,6 +30,9 @@ const RegPage = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6  shadow-xl rounded-xl mt-10">
+      <Helmet>
+        <title>Registration || Intern or Volunteer</title>
+      </Helmet>
       <h2 className="text-2xl font-bold text-center text-primary mb-6">
         Join as Intern or Volunteer
       </h2>
