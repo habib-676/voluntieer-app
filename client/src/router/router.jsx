@@ -3,12 +3,12 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/home/Home";
 import RegPage from "../pages/registration/RegPage";
 import Applicants from "../pages/applicants/Applicants";
+import ErrorPage from "../pages/error/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <div>Error</div>,
     children: [
       {
         index: true,
@@ -21,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "applicants",
         element: <Applicants />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },

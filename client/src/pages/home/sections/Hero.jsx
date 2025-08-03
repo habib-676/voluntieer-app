@@ -1,5 +1,6 @@
 import heroImg from "../../../assets/images/hero-img.jpg";
 import bgImg from "../../../assets/images/bg-img.png";
+import { Link } from "react-router";
 
 const Hero = () => {
   return (
@@ -15,8 +16,14 @@ const Hero = () => {
           resources, and hope for a brighter future.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <button className="btn btn-primary">Sponsor a Child</button>
-          <button className="btn btn-secondary">Join as Volunteer</button>
+          <button className="btn btn-primary text-black hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+            Sponsor a Child
+          </button>
+          <Link to={'/registration'}>
+            <button className="btn hover:bg-primary-content hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+              Join as Volunteer
+            </button>
+          </Link>
         </div>
       </div>
 
