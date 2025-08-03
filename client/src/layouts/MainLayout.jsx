@@ -1,13 +1,46 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import particlesConfig from "../components/particlesConfig";
 
 const MainLayout = () => {
+  const [init, setInit] = useState(false);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+      //await loadBasic(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
   return (
-    <div className="max-w-11/12 mx-auto">
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-      <Footer></Footer>
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Particles background */}
+      {init && (
+        <Particles
+          id="tsparticles"
+          particlesLoaded={particlesLoaded}
+          options={particlesConfig}
+          className="absolute inset-0 -z-10"
+        />
+      )}
+
+      {/* Page Content */}
+      <div className="max-w-11/12 mx-auto work-sans relative z-10">
+        <Navbar />
+        <div className="min-h-[80vh]">
+          <Outlet />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 };

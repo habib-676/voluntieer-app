@@ -1,0 +1,6 @@
+.active {
+  color: #82b440;
+}
+a {
+  transition: all 0.3s ease;
+}
